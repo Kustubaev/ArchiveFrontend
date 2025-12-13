@@ -1,0 +1,108 @@
+// box-list.component.scss
+.box-list {
+  padding: 1rem;
+
+  h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .box-item {
+    border: 1px solid #444;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+
+    .box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background-color: #f5f5f5;
+      cursor: pointer;
+
+      .box-info {
+        flex: 1;
+
+        span {
+          font-weight: bold;
+        }
+
+        .box-stats {
+          display: flex;
+          gap: 1rem;
+          font-size: 0.9rem;
+          margin-top: 0.25rem;
+
+          span {
+            font-weight: normal;
+          }
+        }
+      }
+
+      .fill-indicator {
+        width: 100px;
+        height: 20px;
+        border: 1px solid #444;
+        border-radius: 5px;
+        background-color: transparent;
+        overflow: hidden;
+        margin: 0 1rem;
+
+        .fill-progress {
+          height: 100%;
+          background: linear-gradient(90deg,
+            rgba(88, 255, 155, 1) 0%,
+            rgba(255, 172, 100, 1) 60%,
+            rgba(255, 88, 88, 1) 100%);
+          transition: width 0.3s ease;
+          position: relative;
+        }
+        .fill-white{
+          display: block;
+          background-color: #fff;
+          width: 0px;
+          height: 100%;
+          margin-left: auto;
+        }
+      }
+
+      .expand-btn {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+
+    .box-details {
+      padding: 1rem;
+      background-color: #fafafa;
+      overflow: hidden;
+
+      .documents-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.5rem;
+
+        .document-card {
+          padding: 0.5rem;
+          border: 1px solid #444;
+          border-radius: 4px;
+          text-align: center;
+          background-color: #d9f2db;
+
+          &.missing {
+            background-color: #ffcdd2;
+            border-color: #f44336;
+          }
+
+          &.partial {
+            background-color: #fff3e0;
+            border-color: #ffa726;
+          }
+        }
+      }
+    }
+  }
+}

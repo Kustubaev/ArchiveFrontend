@@ -1,0 +1,47 @@
+// box-details.component.scss
+.box-details {
+  padding: 1rem;
+
+  .back-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .box-stats {
+    margin-bottom: 1.5rem;
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .documents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+
+    .document-card {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: center;
+      background-color: #e8f5e9;
+
+      &.missing {
+        background-color: #ffcdd2;
+        border-color: #f44336;
+      }
+
+      &.partial {
+        background-color: #fff3e0;
+        border-color: #ffa726;
+      }
+    }
+  }
+}

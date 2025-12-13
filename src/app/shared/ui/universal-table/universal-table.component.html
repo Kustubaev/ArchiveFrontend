@@ -1,0 +1,48 @@
+<!-- universal-table.component.html -->
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let col of columns">{{ col.title }}</th>
+        <th>Действия</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data; trackBy: trackByFn">
+        <td *ngFor="let col of columns">
+          <ng-container [ngSwitch]="col.key">
+            <ng-container *ngSwitchCase="'Approval'">
+              {{ row[col.key] ? 'Оригинал' : 'Копия' }}
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              {{ row[col.key]}}
+            </ng-container>
+          </ng-container>
+        </td>
+        <td>
+          <div class="open">
+            <button class="button__open" (click)="openDetails(row)">
+              <img src="assets/svg/open.svg" alt="">
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Пагинация -->
+<div class="pagination">
+  <div><b>{{pagination.total}}</b> элемент</div>
+  <div class="pagination-controls" *ngIf="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage <= 1">Назад</button>
+    <span>{{ currentPage }} / {{ pagination.last_page }}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage >= pagination.last_page">Вперёд</button>
+  </div>
+</div>
+
+<!-- Модальное окно -->
+<app-modal
+  *ngIf="selectedApplicant"
+  [applicant]="selectedApplicant"
+  (close)="closeModal()">
+</app-modal>

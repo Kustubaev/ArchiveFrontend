@@ -1,0 +1,13 @@
+/* app.component.scss */
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0; 
+}
+
+.main {
+  flex: 1;
+  min-height: 0;
+  display: block;
+}

@@ -1,0 +1,33 @@
+<!-- applicant-modal.component.html -->
+<div class="modal-overlay" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="header">
+      <span></span>
+      <h1 class="heared-title">Подробная информация о деле</h1>
+      <button class="close-btn" (click)="onClose()">×</button>
+    </div>
+    <div class="modal-body" *ngIf="applicant">
+      <h2 class="modal-title"> № <b>2.03.009</b> находится в коробке №<b>5</b> между делами 2.03.008 и 2.03.010</h2>
+      <p><strong>ID в архиве:</strong> {{ applicant.Id_Archive }}</p>
+      <p><strong>ID личного дела:</strong> {{ applicant.Id }}</p>
+      <p><strong>ФИО:</strong> {{ applicant.FIO }}</p>
+      <p><strong>Телефон:</strong> {{ applicant.Telephone }}</p>
+      <p><strong>Согласие:</strong> {{ applicant.Approval ? "Оригинал" : "Копия"}}</p>
+      <h4 class="areas-title">Направления подготовки:</h4>
+      <p>09.03.01 Информатика и вычислительная техника (Логика и дизайн пользовательских интерфейсов)</p>
+      <p>09.03.01 Информатика и вычислительная техника (ПО средств вычислительной техники и АС)</p>
+      <p>09.03.01 Информатика и вычислительная техника (Проектирование и разработка Web-приложений)</p>
+      <div class="change">
+        <h3 class="change-title">История изменения дела</h3>
+        <ul class="change-ul">
+          <li class="change-li">19 июля 2025 в 16:48. Дело было создано менеджером 16.</li>
+          <li class="change-li">20 июля 2025 в 17:48. Дело было добавлено в архив архивистом 3.</li>
+          <li class="change-li">19 июля 2025 в 16:48. Дело было создано менеджером 16.</li>
+          <li class="change-li">8 июля 2025 в 17:48. Дело было добавлено в архив архивистом 3.</li>
+          <li class="change-li">20 июля 2025 в 17:48. Дело было добавлено в архив архивистом 4.</li>
+          <li class="change-li">19 июля 2025 в 16:48. Дело было создано менеджером 16.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

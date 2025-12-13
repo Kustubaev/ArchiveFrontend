@@ -1,0 +1,38 @@
+<!-- box-list.component.html -->
+<div class="box-list">
+  <div class="box-item" *ngFor="let box of boxes">
+    <div class="box-header" (click)="toggleBox(box.id)">
+      <div class="box-info">
+        <span>{{ box.name }}</span>
+        <div class="box-stats">
+          <span>Занято: {{ box.occupiedSlots }} из {{ box.totalSlots }} мест</span>
+          <span>{{ box.documentsInBox }} дела в коробке</span>
+          <span>{{ box.missingDocuments }} дел отсутствует</span>
+        </div>
+      </div>
+
+      <!-- Градиентный индикатор заполненности -->
+      <div class="fill-indicator">
+        <div
+          class="fill-progress">
+          <span class="fill-white" [style.width.%]="100 - ((box.occupiedSlots / box.totalSlots) * 100)"></span>
+        </div>
+      </div>
+
+      <button class="expand-btn">{{ isExpanded(box.id) ? '▲' : '▼' }}</button>
+    </div>
+
+    <!-- Раскрывающийся контент с анимацией -->
+    <div class="box-details" *ngIf="isExpanded(box.id)" @expand>
+      <div class="documents-grid">
+        <div 
+          *ngFor="let doc of box.documents" 
+          class="document-card"
+          [class.missing]="doc.status === 'missing'"
+          [class.partial]="doc.status === 'partial'">
+          {{ doc.code }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

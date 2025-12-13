@@ -1,0 +1,70 @@
+// universal-table.component.scss
+.table-container {
+  padding: 1rem;
+  overflow-x: auto;
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+
+    th, td {
+      border: 1px solid #333;
+      padding: 0.3rem 0.7rem;
+      text-align: center;
+    }
+
+    th {
+      cursor: pointer;
+      user-select: none;
+      background-color: #313C8C;
+      text-align: center;
+      color: #fff;
+      padding: 0.5rem;
+    }
+  }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.pagination{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+tr:nth-child(even){
+  background-color: #ebebeb;
+}
+
+.open{
+  display: flex;
+  justify-content: end;
+}
+
+.button__open{
+  background-color: #313C8C;
+  padding: 10px 9px 9px 10px;
+  border-radius: 0.5rem;
+}
+
+.image{
+  width: 100%;
+  aspect-ratio: 1/1;
+}

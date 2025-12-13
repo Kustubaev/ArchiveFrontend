@@ -1,0 +1,13 @@
+<!-- search.component.html -->
+<div class="search-container">
+  <div class="search-box">
+    <input
+    class="search-input"
+      type="text"
+      [(ngModel)]="query"
+      placeholder="Поиск личного дела..."
+      (keydown.enter)="onSearch()"
+    />
+    <button (click)="onSearch()" class="search-button">Найти</button>
+  </div>
+</div>

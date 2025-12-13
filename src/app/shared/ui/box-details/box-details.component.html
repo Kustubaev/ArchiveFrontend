@@ -1,0 +1,23 @@
+<!-- box-details.component.html -->
+<div class="box-details">
+  <button class="back-btn" (click)="goBack()">← Назад</button>
+  <h2>{{ box?.name }}</h2>
+  <div class="box-stats">
+    <p>Занято: {{ box?.occupiedSlots }} из {{ box?.totalSlots }} мест</p>
+    <p>{{ box?.documentsInBox }} дела в коробке</p>
+    <p>{{ box?.missingDocuments }} дел отсутствует</p>
+  </div>
+
+  @if (box?.documents; as documents) {
+    <div class="documents-grid">
+      @for (doc of documents; track doc.code) {
+        <div 
+          class="document-card"
+          [class.missing]="doc.status === 'missing'"
+          [class.partial]="doc.status === 'partial'">
+          {{ doc.code }}
+        </div>
+      }
+    </div>
+  }
+</div>
