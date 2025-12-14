@@ -1,17 +1,25 @@
 <!-- header.component.html -->
 <header class="header">
   <div class="container flexCenterBetween">
-    <a routerLink="/" routerLinkActive="active-link">
-      <img class="header__image" src="assets/images/logo.png" alt="Логотип">
+    <a routerLink="/" routerLinkActive="active-link" class="logo-link">
+      <img class="header__image" src="assets/images/logo.png" alt="Логотип Университета">
     </a>
-    <nav class="nav">
-      <a routerLink="/search" routerLinkActive="active-link" class="nav-link">Поиск</a>
-      <a routerLink="/table" routerLinkActive="active-link" class="nav-link">Таблица</a>
-      <a routerLink="/boxes" routerLinkActive="active-link" class="nav-link">Коробки</a>
+
+    <nav class="nav" [class.active]="isNavOpen">
+      <a routerLink="/search" routerLinkActive="active-link" class="nav-link" (click)="closeMenu()">Поиск</a>
+      <a routerLink="/table" routerLinkActive="active-link" class="nav-link" (click)="closeMenu()">Таблица</a>
+      <a routerLink="/boxes" routerLinkActive="active-link" class="nav-link" (click)="closeMenu()">Коробки</a>
     </nav>
-    <button class="button">
-      Войти
-      <img class="image" src="assets/svg/login.svg" alt="">
-    </button>
+
+    <div class="button__wrapper">
+      <button class="button" aria-label="войти" (click)="closeMenu()">
+        Войти
+        <img class="image" src="assets/svg/login.svg" alt="Вход">
+      </button>
+      
+      <button class="nav-toggle" (click)="toggleNav()" aria-label="Открыть меню">
+        ☰
+      </button>
+    </div>
   </div>
 </header>

@@ -9,4 +9,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router'
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  isNavOpen = false;
+
+  toggleNav() {
+    this.isNavOpen = !this.isNavOpen;
+  }
+
+  closeMenu() {
+    this.isNavOpen = false;
+  }
+}

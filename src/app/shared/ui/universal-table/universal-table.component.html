@@ -21,8 +21,8 @@
         </td>
         <td>
           <div class="open">
-            <button class="button__open" (click)="openDetails(row)">
-              <img src="assets/svg/open.svg" alt="">
+            <button class="button__open" (click)="openDetails(row)" aria-label="Открыть">
+              <img class="image-open" src="assets/svg/open.svg" alt="">
             </button>
           </div>
         </td>
@@ -30,16 +30,15 @@
     </tbody>
   </table>
 
-  <!-- Пагинация -->
-<div class="pagination">
-  <div><b>{{pagination.total}}</b> элемент</div>
-  <div class="pagination-controls" *ngIf="pagination">
-    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage <= 1">Назад</button>
-    <span>{{ currentPage }} / {{ pagination.last_page }}</span>
-    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage >= pagination.last_page">Вперёд</button>
+  <div class="pagination">
+    <div><b>{{pagination.total}}</b> элемент</div>
+    <div class="pagination-controls" *ngIf="pagination">
+      <button aria-label="назад" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage <= 1">Назад</button>
+      <span>{{ currentPage }} / {{ pagination.last_page }}</span>
+      <button aria-label="вперёд" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage >= pagination.last_page">Вперёд</button>
+    </div>
   </div>
 </div>
-
 <!-- Модальное окно -->
 <app-modal
   *ngIf="selectedApplicant"

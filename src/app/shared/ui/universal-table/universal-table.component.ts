@@ -28,7 +28,9 @@ export class UniversalTableComponent<T extends Record<string, any> = any> implem
   currentPage = 1;
   sortKey: string | null = null;
   sortDirection: 'asc' | 'desc' = 'asc';
+  
 
+  // selectedApplicant: Applicant | null = MOCK_APPLICANTS[0];
   selectedApplicant: Applicant | null = null;
 
   ngOnInit(): void {

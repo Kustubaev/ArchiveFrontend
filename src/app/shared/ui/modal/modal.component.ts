@@ -17,11 +17,11 @@ export class ApplicantModalComponent {
     constructor() {}
 
   ngOnInit(): void {
-    document.body.classList.add('modal-open'); // ✅ Блокировка прокрутки
+    document.body.classList.add('modal-open');
   }
 
   ngOnDestroy(): void {
-    document.body.classList.remove('modal-open'); // ✅ Снятие блокировки
+    document.body.classList.remove('modal-open');
   }
   
   onClose(): void {

@@ -3,7 +3,7 @@
   <div class="box-item" *ngFor="let box of boxes">
     <div class="box-header" (click)="toggleBox(box.id)">
       <div class="box-info">
-        <span>{{ box.name }}</span>
+        <span class="box-info-title">{{ box.name }}</span>
         <div class="box-stats">
           <span>Занято: {{ box.occupiedSlots }} из {{ box.totalSlots }} мест</span>
           <span>{{ box.documentsInBox }} дела в коробке</span>
@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <button class="expand-btn">{{ isExpanded(box.id) ? '▲' : '▼' }}</button>
+      <button class="expand-btn" aria-label="направление">{{ isExpanded(box.id) ? '▲' : '▼' }}</button>
     </div>
 
     <!-- Раскрывающийся контент с анимацией -->
