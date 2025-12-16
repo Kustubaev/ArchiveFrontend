@@ -7,11 +7,13 @@
   top: 0;
   z-index: 100; // Чтобы была поверх других элементов
 
-  .header__image{
+  .header__image {
     width: 120px; // Уменьшаем логотип
-    height: auto; // Сохраняем пропорции
+    height: 43px; // Сохраняем пропорции
+
     @media (max-width: 480px) {
-       width: 100px; // Еще меньше на очень маленьких экранах
+      width: 100px; // Еще меньше на очень маленьких экранах
+      height: 35.75px;
     }
   }
 
@@ -32,7 +34,7 @@
     }
   }
 
-  .button{
+  .button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,12 +45,13 @@
     background-color: #4550b5; // Легкий акцент для кнопки
     border-radius: 4px;
 
-    .image{
+    .image {
       width: 24px; // Уменьшаем иконку
       height: 24px;
+
       @media (max-width: 480px) {
-         width: 20px; // Еще меньше на очень маленьких
-         height: 20px;
+        width: 20px; // Еще меньше на очень маленьких
+        height: 20px;
       }
     }
   }
@@ -70,7 +73,7 @@
   padding: 4px 9px;
 }
 
-.button__wrapper{
+.button__wrapper {
   display: flex;
   align-items: center;
   justify-content: center;

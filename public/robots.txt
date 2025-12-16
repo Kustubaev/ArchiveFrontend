@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nmstu-archive.vercel.app/sitemap.xml
